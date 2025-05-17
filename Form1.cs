@@ -19,30 +19,25 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // This method is called when the text in textBox1 changes.
-            // You can add any additional logic here if needed.
-            String text = textBox1.Text;
-            if (string.IsNullOrEmpty(text))
-            {
-                MessageBox.Show("Please enter some text.");
-            }
-            else
-            {
-                textBox2.Text = textBox1.Text;
-                textBox1.Text = "";
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label1.Text = "Hello World!";
+            label1.BackColor = Color.Yellow;
             string text = textBox1.Text;
             if (string.IsNullOrEmpty(text))
             {
                 MessageBox.Show("Please enter some text.");
             }
             else
-            {            
+            {
+                // disable the input box
+                textBox2.Enabled = false;
                 textBox2.Text = textBox1.Text;
+                //  change the background color of the input box
+                textBox2.BackColor = Color.LightBlue;
                 textBox1.Text = "";
 
             }
@@ -74,6 +69,21 @@ namespace WindowsFormsApp1
                 textBox1.Text = "";
 
             }
+
+        }
+
+        private void label1_FontChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
